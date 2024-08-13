@@ -1,0 +1,70 @@
+.reservationContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 1.25rem;
+  box-shadow: var(--card-shadow);
+}
+
+.reservationContent {
+  display: flex;
+  gap: 2rem;
+}
+
+.reservationLeft {
+  width: 40%;
+}
+
+.reservationRight {
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
+
+.themeImgBox {
+  overflow: hidden;
+  flex: none;
+  width: 100%;
+  height: 240px;
+  border-radius: var(--img-radius);
+}
+
+.themeImgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reservationInfoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+
+
+@media screen and (max-width: 1120px) {
+  .reservationLeft {
+    width: 100%;
+  }
+
+  .reservationRight {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .reservationContent {
+    flex-direction: column;
+  }
+
+}
+
+
+@media screen and (max-width: 480px) {
+  .reservationContainer {
+    padding: 1.25rem;
+  }
+}

@@ -1,0 +1,86 @@
+// 避免重複掛載字型，已經改到globals.css
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap');
+
+$pri-1: #222222;
+$sec-1: #B99755;
+$pri-3: #d9d9d9;
+$success: #61dcb0;
+$danger: #a43131;
+$text-white: #ffffff;
+$text-dark: #222222;
+$text-grey: #5b5b5b;
+$text-accent: #8c764c;
+$font-family: 'Noto Serif JP', 'serif';
+$nav-height: 100px;
+
+@mixin font-h1 {
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.24rem;
+  font-family: $font-family;
+}
+
+@mixin font-h2 {
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.2rem;
+  font-family: $font-family;
+}
+
+@mixin font-h3 {
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.18rem;
+  font-family: $font-family;
+}
+
+@mixin font-h4 {
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.14rem;
+  font-family: $font-family;
+}
+
+@mixin font-h5 {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.12rem;
+  font-family: $font-family;
+}
+
+@mixin font-p-bold {
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.135rem;
+  font-family: $font-family;
+}
+
+@mixin font-p {
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.135rem;
+  font-family: $font-family;
+}
+
+@mixin font-small {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.12rem;
+  font-family: $font-family;
+}

@@ -1,0 +1,10 @@
+.errorBox {
+  margin-top: 2px;
+  height: 20px;
+}
+
+.errorText {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--danger);
+}

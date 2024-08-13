@@ -1,0 +1,59 @@
+.couponSection {
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: var(--content-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.couponBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.span2 {
+  grid-column: span 2;
+  margin-bottom: 0.5rem;
+}
+
+.popupContainer {
+  width: 480px;
+}
+
+.couponInfoBox {
+  font-size: 1rem;
+  letter-spacing: var(--letter-spacing-2);
+}
+
+.couponInfoBox div:first-child {
+  margin-bottom: .125rem;
+  font-weight: bold;
+}
+
+.popupContainer .btn-medium-fill {
+  margin-top: 1rem;
+  align-self: flex-end;
+}
+
+
+
+
+@media screen and (max-width: 1280px) {
+  .couponBox {
+    grid-template-columns: auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  .sectionContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .couponBox {
+    grid-template-columns: auto;
+  }
+}

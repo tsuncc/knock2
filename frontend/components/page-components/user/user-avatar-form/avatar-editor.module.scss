@@ -1,0 +1,22 @@
+@import '@/styles/variables.scss';
+
+.cropperContainer {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & :global(.cropper-view-box) {
+    border-radius: 50%; 
+    outline: unset;
+    border: 2px solid $text-white;
+  }
+  & :global(.cropper-face) {
+    background-color: unset;
+  }
+  & :global(.cropper-modal) {
+    // background-color: unset;
+    // opacity: unset;
+    border-radius: 12px; /* 将裁切框变成圆形 */
+  }
+}

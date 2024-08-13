@@ -1,0 +1,15 @@
+.stepperInputContainer {
+  display: flex;
+  width: 5.5rem;
+  justify-content: space-between;
+}
+
+.stepperValue {
+  text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+  .stepperValue {
+    font-size: .875rem;
+  }
+}

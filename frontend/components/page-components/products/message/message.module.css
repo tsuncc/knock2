@@ -1,0 +1,317 @@
+.fix {
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  right: 10px;
+  bottom: 100px;
+  height: 460px;
+  max-height: calc(100vh - 189px);
+  width: 420px;
+  background-color: var(--bg-grey-light);
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0 5px 40px;
+}
+.openButton {
+  border: none;
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  background-color: var(--sec-1);
+  position: fixed;
+  display: flex;
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  bottom: 120px;
+  right: 3.5%;
+  cursor: pointer;
+  color: #eef1f6;
+}
+.openButton:hover {
+  background-color: #eef1f6;
+  color: var(--sec-1);
+}
+.openButton > svg {
+  width: 40px;
+  height: auto;
+}
+.top {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 25px 25px 0 0;
+  background-color: var(--sec-1);
+}
+.top h5 {
+  font-size: 20px;
+  font-weight: 700;
+}
+.topArrow {
+  display: flex;
+  align-items: center;
+  font-size: 34px;
+  margin-right: 12px;
+  color: #eef1f6;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+.topArrow:hover {
+  color: var(--pri-1);
+  /* color: var(--sec-1); */
+}
+#messageArea {
+  position: relative;
+  height: 100%;
+  padding: 12px;
+  overflow: scroll;
+  scrollbar-width: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.msgtext {
+  display: flex;
+  flex-direction: column;
+}
+#form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.bottom {
+  display: flex;
+  box-sizing: border-box;
+  align-items: flex-end;
+  width: 100%;
+  height: auto;
+  padding: 12px;
+  border-top: 1px solid #eef1f6;
+}
+
+#form > button {
+  display: flex;
+  align-items: center;
+  font-size: 26px;
+  background-color: inherit;
+  padding: 0.25rem;
+  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+  /* background: #333; */
+  border: none;
+  /* padding: 0 1rem;
+  margin: 0.25rem;
+  outline: none;
+  color: #fff; */
+}
+
+#form > input {
+  border: 1.5px solid #5b5b5b;
+  border-radius: 5px;
+  padding: 0 0.25rem;
+  flex-grow: 1;
+  margin: 0.25rem;
+}
+
+.visible {
+  visibility: hidden;
+}
+/* 聊天文字 */
+.right {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 6px;
+  position: relative;
+}
+.left {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 6px;
+  position: relative;
+}
+
+.msgLeft,
+.msgRight {
+  padding: 4px 8px;
+  background-color: rgb(205, 204, 201);
+  border-radius: 8px;
+  margin-left: 14px;
+  display: flex;
+  align-items: center;
+}
+.msgLeftImg {
+  padding: 8px;
+  background-color: rgb(205, 204, 201);
+  border-radius: 8px;
+  margin-left: 14px;
+  display: flex;
+  align-items: center;
+  max-width: 150px;
+  width: 100%;
+  height: 100%;
+}
+.msgLeftSticker {
+  margin-left: 14px;
+  display: flex;
+  align-items: center;
+  max-width: 150px;
+  width: 100%;
+  height: 100%;
+}
+.msgRight::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 48px;
+  width: 15px;
+  height: 15px;
+  z-index: -100;
+  background-color: rgb(205, 204, 201);
+  transform: rotate(45deg);
+}
+.msgLeft::after {
+  content: '';
+  position: absolute;
+  z-index: -100;
+  top: 10px;
+  right: -4px;
+  width: 15px;
+  height: 15px;
+  background-color: rgb(205, 204, 201);
+  transform: rotate(45deg);
+}
+#adminImg {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100px;
+}
+/* emoji */
+.emojiArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2px;
+  margin: 0 2px;
+  cursor: pointer;
+  position: relative;
+}
+.emojiArea button,
+.stickersArea button,
+.uploadImgArea button {
+  border: none;
+  background-color: transparent;
+}
+.emojiPicker {
+  position: absolute;
+  bottom: 50px;
+  z-index: 999;
+}
+.emojiArea button:hover {
+  color: var(--sec-1);
+}
+
+#form button:hover {
+  color: var(--sec-1);
+}
+
+/* 貼圖 */
+.stickersArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2px;
+  margin: 0 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.stickersArea button:hover {
+  color: var(--sec-1);
+}
+.stickerWindow {
+  position: absolute;
+  bottom: 50px;
+  z-index: 999;
+  width: 230px;
+  /* height: 200px; */
+  background-color: #eef1f6;
+  border-radius: 8px;
+
+  /* display: flex;
+align-items: center;
+justify-content: space-around; */
+}
+.stickerImgArea {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  margin: 10px;
+}
+.stickerImg {
+  width: 45px;
+  height: auto;
+}
+.stickerImg:hover {
+  width: 100%;
+}
+.uploadImgArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2px;
+  margin: 0 2px;
+  cursor: pointer;
+  position: relative;
+}
+.uploadImgArea button:hover {
+  color: var(--sec-1);
+}
+#originalInput {
+  display: none;
+}
+
+.uploadWindow {
+  position: absolute;
+  bottom: 60px;
+  left: -60px;
+  z-index: 999;
+  /* width: 6.25rem; */
+  /* height: 5rem; */
+  padding: 6px;
+  border-radius: 8px;
+  background-color: var(--bg-grey-light);
+  border: 1px solid var(--input-grey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.uploadWindow img {
+  width: 100%;
+  height: 100%;
+}
+.sendImg {
+  position: absolute;
+  right: 0;
+  bottom: 55px;
+  z-index: 999;
+  width: 26px;
+}
+
+@media screen and (max-width: 580px) {
+  .fix {
+    height: 460px;
+    max-height: calc(100vh - 189px);
+    width: 90%;
+  }
+  .messageInp {
+    width: 100%;
+  }
+  .emojiPicker {
+  left: -15px;
+  }
+  /* 貼圖 */
+  .stickerWindow {
+    left: -20px;
+  }
+}

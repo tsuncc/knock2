@@ -1,0 +1,13 @@
+.rowBox {
+  display: flex;
+  flex-direction: column;;
+}
+
+
+.rowBox p {
+  font-size: 1rem;
+}
+
+.rowBox p:first-child {
+  font-weight: bold;
+}

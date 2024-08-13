@@ -1,0 +1,12 @@
+.text {
+  margin-left: 4px;
+  text-decoration: underline;
+  letter-spacing: 2px;
+}
+
+
+@media screen and (max-width: 480px) {
+  .text {
+    font-size: 11px;
+  }
+}

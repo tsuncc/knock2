@@ -1,0 +1,33 @@
+/* order item component module style */
+.itemBox {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.itemInfo p {
+  font-weight: bold;
+}
+
+.qty {
+  flex-grow: 0;
+  flex-shrink: 0;
+  align-self: flex-start;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 2px 8px;
+  background-color: #f7f7f7;
+  border-radius: 4px;
+}
+
+.qtyPriceStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

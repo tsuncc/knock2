@@ -1,0 +1,51 @@
+.tStyle {
+    .reservationrBg {
+        width: 600px;
+        height: 860px;
+        background-color: var(--pri-1);
+        margin-top: 60px;
+        margin-bottom: 60px;
+        border: 2px solid var(--sec-1);
+        border-radius: 20px;
+        color: var(--pri-3);
+        /* padding: 10px; */
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    .form {
+        margin-top: 30px;
+        /* margin-left: 38px; */
+    }
+
+    .p {
+        margin-top: 28px;
+    }
+
+    .booking {
+        border: 1px solid var(--sec-1);
+        background-color: var(--pri-1);
+        color: var(--sec-1);
+        padding: 10px 30px;
+        border-radius: 30px;
+    }
+
+    .title {
+        color: var(--sec-1);
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .booking:hover {
+        border: 1px solid var(--sec-1);
+        background-color: var(--sec-1);
+        color: rgb(255, 255, 255);
+    }
+
+    .error {
+        color: rgb(190, 0, 0);
+        margin-top: 2.6px;
+        font-size: 12px;
+    }
+}

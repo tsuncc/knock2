@@ -1,0 +1,16 @@
+.couponBox {
+  display: flex;
+  margin-top: 5rem;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  flex-grow: 1;
+  color: var(--pri-1);
+  font-size: 16px;
+  border: 2px solid #d9d9d9;
+  border-right: 0px;
+  border-radius: 6px 0 0 6px;
+}

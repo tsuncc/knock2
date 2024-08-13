@@ -1,0 +1,11 @@
+.tagBox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  min-width: 2rem;
+  padding: 1px 6px;
+  border-radius: 4px;
+  color: var(--sec-1);
+  background-color:#efe9de;
+}

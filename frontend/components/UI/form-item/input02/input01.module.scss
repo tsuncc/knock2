@@ -1,0 +1,104 @@
+@import '@/styles/variables.scss';
+
+// default
+$border: #B99755;
+$color: #B99755;
+$text-color: #B99755;  // 新增：文字顏色變量
+
+// focus
+$box-shadow: #f1ddb5;
+// hover focus
+$border-color: #a38e64;
+
+// disabled
+$disabled-field-line: #B99755;
+
+.inputDefault {
+  @include font-small;
+  position: relative;
+  width: 500px;
+  height: 40px;
+  padding: 0.5rem 1rem;
+  color: #B99755 !important;
+  background: #222222;
+  border-radius: 10px;
+  border: 2px solid #B99755;
+  transition: all 200ms;
+
+  &:hover {
+    border-color: #B99755;
+    color: #B99755 !important;
+  }
+
+  &:focus {
+    border-color: #B99755;
+    box-shadow: 0 0 0 3px $box-shadow;
+    background: #ffff;
+    color: #B99755 !important;
+  }
+
+  // firefox
+  &:focus-visible {
+    outline: 0;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 325px;
+    height: 30px;
+  }
+}
+
+.inputDefaultLine {
+  @include font-small;
+  width: 100%;
+  height: 32px;
+  padding: 0.5rem 1rem;
+  color: #B99755 !important;
+  background: #fff;
+  border: none;
+  transition: all 200ms;
+
+  &:hover, &:focus {
+    border-color: #B99755;
+    color: #B99755 !important;
+  }
+
+  &:focus-visible {
+    outline: 0;
+  }
+}
+
+.inputDisabled {
+  @include font-small;
+  width: 100%;
+  height: 40px;
+  padding: 0.5rem 1rem;
+  color: #B99755 !important;
+  background: #fff;
+  border-radius: 8px;
+  border: unset;
+}
+
+.inputDisabledLine {
+  @include font-small;
+  width: 100%;
+  height: 32px;
+  padding: 0.5rem 1rem;
+  color: #B99755 !important;
+  background: #fff;
+  border: none;
+  border-bottom: 2px solid $disabled-field-line;
+  transition: all 200ms;
+
+  &:hover, &:focus {
+    border-color: $disabled-field-line;
+    color: #B99755 !important;
+  }
+
+  &:focus-visible {
+    outline: 0;
+  } 
+  @media screen and (max-width: 480px) {
+    width: 325px;
+  }
+}

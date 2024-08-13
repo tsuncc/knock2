@@ -1,0 +1,36 @@
+.modalContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+  width: 500px;  /* 默認寬度 */
+  height: 250px; /* 默認高度 */
+}
+
+.modalHeader {
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.modalBody {
+  color: #666;
+  font-size: 12px;
+  line-height: 1.5;
+}
+@media (max-width: 600px) {
+  .modalContainer {
+    width: 75% !important;  /* 使用 !important 來覆蓋行內樣式 */
+    height: auto !important;  /* 高度自適應內容 */
+    max-height: 70vh;  /* 最大高度為視窗高度的 80% */
+  }
+}

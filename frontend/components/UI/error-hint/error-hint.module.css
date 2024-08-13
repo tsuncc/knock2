@@ -1,0 +1,10 @@
+.validateFailedBox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background-color: #f0e2e2;
+  color: var(--danger);
+  letter-spacing: 1px;
+}

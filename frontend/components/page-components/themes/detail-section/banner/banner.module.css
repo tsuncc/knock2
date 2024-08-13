@@ -1,0 +1,354 @@
+
+.item {
+  background-color: white;
+  height: 280px;
+}
+
+.h1 {
+  color: var(--bg-grey-light);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.p {
+  color: #d9d9d9;
+  line-height: 2.2rem;
+  margin-top: 2.25rem;
+  letter-spacing: 3px;
+}
+
+.hr {
+  border-color: #d9d9d9;
+  opacity: 0.8;
+  margin-top: 30px;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #d9d9d9;
+  font-size: 18px;
+  line-height: 2.5rem;
+}
+
+.star {
+  color: #d9d9d9;
+  display: flex;
+  align-items: center;
+}
+
+.span {
+  margin-left: auto;
+}
+
+.warning {
+  margin-left: auto;
+  background-color: #b99755;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 60px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.warning:hover {
+  background-color: #b79143;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.warning:active {
+  background-color: #a58238;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+}
+
+.warning:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(185, 151, 85, 0.3);
+}
+
+.title {
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.musicPromptOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.musicPrompt {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.musicPromptButtons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.acceptButton, .declineButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.acceptButton {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.declineButton {
+  background-color: #f44336;
+  color: white;
+}
+/* audioPlayer.module.css */
+/* audioPlayer.module.css */
+@keyframes sound {
+  0% {
+    height: var(--min-height);
+  }
+  100% {
+    height: var(--max-height);
+  }
+}
+
+.play {
+  position: absolute;
+  bottom: 115px;
+  right: 120px;
+  z-index: 1000;
+}
+
+.playerWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.soundBar {
+  width: 4px;
+  background: white;
+  margin: 0 1px;
+  animation: sound 0.5s linear infinite alternate;
+}
+
+.playerButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.playerButton:hover {
+  transform: scale(1.1);
+}
+
+.playerButton:active {
+  transform: scale(0.95);
+}
+
+.playerButton svg {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.playerButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.playerButton:hover::before {
+  opacity: 1;
+}
+
+.playerButton:focus {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.soundBarsContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 32px;
+  height: 48px; /* 設置一個固定高度 */
+}
+
+.autoplayMessage {
+  font-size: 12px;
+  color: white;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.musicPrompt {
+  text-align: center;
+  padding: 20px;
+  font-size: 16px;
+}
+
+.musicPromptButtons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.acceptButton, .declineButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.acceptButton {
+  background-color: #4e9351;
+  color: white;
+}
+
+.acceptButton:hover {
+  background-color: #3f7642;
+}
+
+.declineButton {
+  background-color: #f44336;
+  color: white;
+}
+
+.declineButton:hover {
+  background-color: #da190b;
+}
+.p3{
+  font-weight: bold;
+  color: #b99755;
+}
+
+@media screen and (max-width: 480px){
+
+  .h1 {
+    color: var(--bg-grey-light);
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 30px;
+  }
+  
+  .p {
+    line-height: 2rem;
+    margin-top: 2rem;
+    letter-spacing: 3px;
+    font-size: 16px;
+  }
+  
+  .hr {
+    border-color: #d9d9d9;
+    opacity: 0.8;
+    margin-top: 30px;
+  }
+  
+  .comment {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .title {
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+  
+  .section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #d9d9d9;
+    font-size: 14px;
+    line-height: 2rem;
+  }
+  
+  .star {
+    font-size: 14px;
+  }
+
+  .warning {
+    border-radius: 18px;
+    margin-left: auto;
+    padding: 3px 20px;
+    font-size: 14px; 
+  }
+  .play {
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
+    z-index: 1000;
+  }
+
+  .item {
+    background-color: white;
+    height: 110px;
+  }
+  .musicPrompt {
+    font-size: 12px;
+  }
+  .p{
+    font-size: 10px;
+  }
+  .p1{
+    font-size: 10px;
+  }
+  .p3{
+    font-size: 10px;
+  }
+}

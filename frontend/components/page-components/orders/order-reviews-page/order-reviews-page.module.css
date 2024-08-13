@@ -1,0 +1,31 @@
+.orderDetailBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2rem;
+  background-color: white;
+  border-radius: var(--content-radius);
+  box-shadow: var(--card-shadow);
+}
+
+
+.orderDetailHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.titleBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.titleBox svg {
+  fill: var(--sec-1);
+}
+
+
+.btnStack {
+  display: inline;
+  align-self: flex-end;
+}

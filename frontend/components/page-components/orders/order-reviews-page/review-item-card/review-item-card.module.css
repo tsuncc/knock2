@@ -1,0 +1,39 @@
+.orderItemBox {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.orderItemBoxRight {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  width: 100%;
+}
+
+.productName {
+  font-weight: bold;
+}
+
+.ratingBox {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-grey);
+}
+
+@media screen and (max-width: 480px) {
+  .orderItemBoxRight {
+    gap: .25rem;
+  }
+
+  .ratingBox {
+    flex-direction: column;
+    gap: .25rem;
+  }
+
+  .orderReviewHintBox img {
+    order: 1;
+  }
+
+}

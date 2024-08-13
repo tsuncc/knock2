@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap');
+
+.section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* padding-top: 82px; */
+  /* gap: 82px; */
+}
+
+.addbtn {
+  position: absolute;
+  top: 100px;
+  right: 50px;
+}
+
+.addbtn2 {
+  position: absolute;
+  top: 160px;
+  right: 50px;
+}
+.text a {
+  font-size: 60px;
+  /* font-family: 'Noto Serif JP'; */
+  font-family: 'Jolly Lodger';
+  font-weight: 600;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+.arrowIcon{
+    position: absolute;
+    top: 170px;
+    left: 200px;
+
+}
+
+@media screen and (max-width: 580px) {
+  .text a {
+    font-size: 46px;
+    left: 5rem;
+  }
+  .addbtn {
+    left: 5.5rem;
+    top: 170px;
+    width: 100px;
+  }
+
+  .addbtn2 {
+    right: 5.5rem;
+    top: 170px;
+    width: 100px;
+  }
+  .arrowIcon{
+    left: 130px;
+    top: 80px;
+}
+
+}

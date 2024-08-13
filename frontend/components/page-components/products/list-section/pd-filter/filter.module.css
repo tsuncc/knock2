@@ -1,0 +1,243 @@
+.frame-around {
+  border-bottom: 2px solid black;
+  width: 100%;
+  height: 46px;
+}
+.frame-bottom{
+  margin-top: 3rem;
+}
+.frame-img{
+  width: 11.25rem;
+}
+.li-line {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+}
+.li-line:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  top: 20%;
+  right: 0;
+  width: 2px;
+  height: 1em;
+  background-color: #878787;
+}
+.li-line a {
+  text-decoration: none;
+  color: black;
+}
+.li-line a:hover {
+  color: #676767;
+}
+.li-line a:hover::before {
+  content: '';
+  position: absolute;
+  bottom: 25px;
+  left: 33px;
+  width: 50px;
+  height: 50px;
+  background-image: url('/ghost/ghost_11.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation-name: ghost;
+  animation-duration: 0.5s;
+}
+
+@keyframes ghost {
+  from {
+    transform: translateY(30px) rotate(-20deg);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.active::before {
+  content: '';
+  position: absolute;
+  bottom: 25px;
+  left: 33px;
+  width: 50px;
+  height: 50px;
+  background-image: url('/ghost/ghost_11.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.frame {
+  position: relative;
+  margin-top: 82px;
+}
+#frame-border {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+
+  padding: 50px;
+}
+.ghostRight {
+  position: absolute;
+  top: -40px;
+  right: 100px;
+}
+
+.ghostLeft {
+  position: absolute;
+  top: -50px;
+  left: 100px;
+}
+.bottom-center{
+  position: relative;
+}
+.text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #676767;
+  position: absolute;
+  top: -10px;
+ 
+}
+
+.eraserIcon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 80px;
+  right: 165px;
+
+  border: 0;
+  outline: none;
+  background-color: transparent;
+}
+.eraserIcon svg {
+  width: 100%;
+  height: 100%;
+  /* fill: ; */
+}
+
+.eraserIcon:hover {
+  cursor: pointer;
+}
+.bottom-left {
+  display: flex;
+}
+.bottom-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.top-input{
+  display: none;
+}
+.top-search-input{
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  #frame-border {
+    padding: 50px 50px 50px 50px;
+  }
+  
+}
+
+@media screen and (max-width: 992px) {
+
+    
+  .ghostLeft {
+    width: 110px;
+    height: auto;
+    top: -15px;
+    left: 50px;
+  }
+  .ghostRight {
+    width: 90px;
+    height: auto;
+    top: -8px;
+    right: 50px;
+  }
+
+  .bottom-left {
+    width: 50%;
+    order: 1;
+  }
+  .bottom-right {
+    width: 50%;
+    order: 2;
+  }
+  .bottom-center {
+    order: 3;
+  }
+}
+
+@media screen and (max-width: 780px) {
+
+  .bottom-left {
+    width: 66.66%;
+    margin-bottom: 20px;
+
+  }
+  .bottom-right {
+    width: 33.33%;
+    margin-bottom: 20px;
+  }
+
+
+  .input-bottom{
+    display: none;
+  }
+  .frame-bottom{
+    margin-top: 0.6rem;
+  }
+
+  #category-ul{
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+  .li-line {
+    width: 8.25rem;
+    margin-bottom: .625rem;
+  }
+
+
+}
+
+@media screen and (max-width: 580px) {
+  .frame-bottom{
+    display: none;
+  }
+  .container{
+    margin: 0 20px;
+  }
+  #frame-border {
+    padding: 20px;
+  }
+
+  .ghostLeft {
+    width: 50px;
+    height: auto;
+    top: 18px;
+    left: 27px;
+  }
+  .ghostRight {
+    width: 40px;
+    height: auto;
+    top: 20px;
+    right: 30px;
+  }
+  .top-input{
+    display: flex;
+    margin-bottom: 20px;
+  }
+  .top-search-input{
+    display: flex;
+    margin-top: 20px;
+  }
+  .top-search-input button{
+    width: 100%;
+  }
+}

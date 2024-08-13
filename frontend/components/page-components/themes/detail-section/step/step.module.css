@@ -1,0 +1,111 @@
+.h1{
+    color: var(--pri-3);
+    text-align: center;
+    margin: 3.75rem;
+}
+.line{
+    border: 1.5px solid #ffffff;
+}
+.step1{
+    color: var(--pri-3);
+    font-size: 28px;
+}
+.step2{
+    color: var(--pri-3);
+    font-size: 28px;
+}
+.price{
+    color: var(--pri-3);
+    font-size: 28px;
+}
+.icon{
+    font-size: 76px;
+    color: var(--pri-3);
+    margin-top: 30px;
+}
+.icon2{
+    font-size: 76px;
+    color: var(--sec-1);
+    margin-top: 110px;
+}
+.icon3{
+    font-size: 76px;
+    color: var(--pri-3);
+    margin-top: 30px;
+}
+.check{
+    height: 90px;
+    width: 75%;
+    background: url('/ghost/ghost_03.png')center center;
+    background-size: cover;
+    margin-top: 20px;
+}
+.p{
+    color: var(--pri-3);
+    margin-top: 30px;
+}
+.p2{
+    color: var(--pri-3);
+    margin-top: 25px;
+}
+.p3{
+    color: var(--pri-3);
+    margin-top: 30px;
+}
+@media screen and (max-width: 480px){
+    .h1{
+        font-size: 28px;
+    }
+    .line{
+        border: 1.5px solid #ffffff;
+    }
+    .step1{
+        color: rgb(197, 154, 80);
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .step{
+        color: rgb(197, 154, 80);
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .price{
+        color: rgb(211, 185, 140);
+        font-size: 16px;
+    }    
+    .p{
+        font-size: 14px;
+    }
+    .p2{
+        font-size: 14px;
+    }
+    
+    .col-6:nth-child(2n) {
+        position: relative;
+      }
+      
+      .col-6:nth-child(2n)::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 10%;
+        width: 80%;
+        height: 1px;
+        background-color: #ccc;
+      }
+      .row {
+        flex-wrap: wrap;
+      }
+      
+      .col-5 {
+        flex: 0 0 calc(50% - 15px);
+        max-width: calc(50% - 15px);
+      }
+      
+      .d-md-none {
+        display: block;
+      }
+      .largeIcon {
+        font-size: 24px; /* 在手機尺寸下可以稍微小一點 */
+      }
+}

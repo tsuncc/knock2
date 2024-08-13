@@ -1,0 +1,160 @@
+.cardBg {
+  background-color: var(--bg-grey-light);
+  padding: 3px;
+  border-radius: .75rem;
+}
+
+.cardBgChecked {
+  background-color: #d2b783;
+}
+
+.cardBgDisabled {
+  background-color: var(--pri-3);
+}
+
+.checkboxContainer {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+.couponCard {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  border-radius: .75rem;
+}
+
+.couponCardLeft {
+  position: relative;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 1rem;
+  background-color: var(--pri-1);
+  border-radius: .75rem;
+  border-right: 1.5px dashed var(--pri-3);
+}
+
+.couponCardRight {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  background-color: var(--pri-1);
+  border-radius: .75rem;
+  color: white;
+}
+
+.history {
+  opacity: 0.75;
+}
+
+.webGhostImg {
+  width: 5rem;
+  padding: 0.25rem;
+}
+
+.couponInfo {
+  flex-grow: 1;
+}
+
+.couponInfo p {
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.textBox {
+  display: flex;
+  flex-direction: column;
+  margin: 6px 0;
+}
+
+.textBox small {
+  font-size: 15px;
+  letter-spacing: 2.5px;
+}
+
+.couponCardLeft::before,
+.couponCardLeft::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+
+.couponCardLeftChecked::before,
+.couponCardLeftChecked::after {
+  background-color: #d2b783;
+}
+
+.couponCardLeftDisabled {
+  background-color: #505050;
+}
+
+.couponCardRightDisabled {
+  background-color: #505050;
+}
+
+.couponCardLeftDisabled::before,
+.couponCardLeftDisabled::after {
+  background-color: var(--pri-3);
+}
+
+.couponCardLeft::before {
+  top: -8px;
+  right: -8px;
+}
+
+.couponCardLeft::after {
+  bottom: -8px;
+  right: -8px;
+}
+
+.appGhostImg {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+
+  .couponCardLeft {
+    padding: .5rem .75rem .5rem .5rem;
+  }
+
+  .couponCardRight {
+    padding: 1rem .625rem 1rem 1rem;
+  }
+
+  .webGhostImg {
+    width: 0rem;
+  }
+
+  .couponInfo p {
+    font-size: 14px;
+  }
+
+  .textBox small {
+    font-size: 12px;
+  }
+
+  .couponInfo {
+    position: relative;
+  }
+
+  .appGhostImg {
+    display: block;
+    position: absolute;
+    width: 3.75rem;
+    right: -12px;
+    bottom: -32px;
+  }
+
+  .couponCardLeft {
+    min-width: 3rem;
+  }
+}

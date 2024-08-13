@@ -1,0 +1,46 @@
+/* order item component module style */
+.itemBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.itemInfo {
+  flex: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.itemInfoSmall {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-weight: bold;
+  gap: .375rem;
+}
+
+.itemNamePriceBox {
+  display: flex;
+  flex-direction: column;
+  gap: .375rem;
+}
+
+.addToFavoriteIcon {
+  font-size: 1.25rem;
+}
+
+
+/* .couponBox {
+  margin-left: 2px;
+  margin-top: .75rem;
+} */
+
+@media screen and (max-width: 480px) {
+  .itemPriceStyle p {
+    font-size: .875rem;
+  }
+}

@@ -1,0 +1,99 @@
+.orderBox {
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: var(--content-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.orderBody {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.orderInfoRowBox {
+  margin-bottom: 1.25rem;
+}
+
+.imgListBox {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.searchContainer {
+  display: flex;
+  gap: 1.5rem;;
+  padding: 16px;
+  background-color: white;
+  margin-bottom: 1rem;
+  border-radius: var(--content-radius);
+  box-shadow: var(--card-shadow);
+}
+
+
+.btnStack {
+  display: flex;
+  gap: 1rem;
+}
+
+.dateBox {
+  display: flex;
+  gap: 1.5rem;;
+
+}
+
+.datePicker {
+  width: 8rem;
+  border: none;
+  border-bottom: 2px solid var(--pri-3);
+  padding-left: 8px;
+  flex-shrink: 0;
+}
+
+.datePicker:hover {
+  border-bottom: 2px solid #bbb29f;
+}
+
+.datePicker:focus {
+  outline: none;
+  /* 移除預設的藍色邊框 */
+  border: none;
+  border-bottom: 2px solid var(--sec-1);
+  /* 自定義邊框樣式 */
+}
+
+
+
+@media screen and (max-width: 1080px) {
+  .orderBody {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .imgListBox {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+}
+
+@media screen and (max-width: 880px) {
+  .searchContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .dateBox {
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  .datePicker {
+    width: 46%;
+  }
+}

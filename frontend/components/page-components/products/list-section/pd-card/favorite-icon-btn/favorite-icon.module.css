@@ -1,0 +1,63 @@
+.likeStyle {
+  position: absolute;
+  transform: rotate(7.421deg);
+  right: -29.991px;
+  top: -33px;
+}
+.likeBefore::before {
+  content: '';
+  position: absolute;
+  width: 122px;
+  height: 104px;
+  right: -40.205px;
+  top: -46.443px;
+  background-image: url('/ghost/ghost_12.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  animation-name: unlike;
+  animation-duration: 2.5s;
+  transition: 5s linear;
+}
+.unlikeStyle {
+  fill: '#fff';
+}
+.addToFavoriteIcon {
+  font-size: 1.25rem;
+}
+
+@keyframes unlike {
+  0% {
+    transform: rotate(-50deg);
+  }
+  25% {
+    transform: translateY(-50px) rotate(50deg);
+  }
+  50% {
+    transform: translateX(20px) rotate(-10deg);
+  }
+  75% {
+    width: 50%;
+    transform: translateY(0px) rotate(10deg);
+  }
+  80% {
+    width: 50%;
+    transform: translateY(-50px) rotate(20deg);
+  }
+  100% {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .likeStyle {
+    right: 0;
+    top: -60px;
+  }
+
+  .likeBefore::before {
+    width: 80px;
+    height: auto;
+    right: 0;
+  }
+}

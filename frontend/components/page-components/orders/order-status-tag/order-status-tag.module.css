@@ -1,0 +1,28 @@
+.orderStatusTag {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: .375rem 0.75rem;
+  border-radius: .5rem;
+}
+
+.orderStatusOrange {
+  color: rgb(233, 126, 0);
+  background-color: rgb(232, 124, 0, 0.2);
+}
+
+.orderStatusGreen {
+  color: rgb(59, 167, 121);
+  background-color: rgb(59, 167, 121, 0.2);
+}
+
+.orderStatusBlue {
+  color: rgb(58, 168, 192);
+  background-color: rgb(58, 168, 192, 0.2);
+}
+
+
+.orderStatusGrey {
+  color: rgb(105, 105, 105);
+  background-color: rgb(105, 105, 105, 0.2);
+
+}

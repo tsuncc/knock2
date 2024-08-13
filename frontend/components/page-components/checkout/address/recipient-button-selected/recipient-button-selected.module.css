@@ -1,0 +1,9 @@
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.headerText {
+  margin-bottom: .375rem;
+}

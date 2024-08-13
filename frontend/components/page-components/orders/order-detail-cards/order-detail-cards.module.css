@@ -1,0 +1,56 @@
+.orderDetailContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: var(--content-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.orderDetailContent {
+  display: flex;
+  gap: 48px;
+}
+
+.orderDetailLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 50%;
+}
+
+.orderDetailRight {
+  width: 50%;
+}
+
+@media screen and (max-width: 1120px) {
+  .orderDetailContent {
+    flex-direction: column;
+  }
+
+  .orderDetailLeft {
+    width: 100%;
+  }
+
+  .orderDetailRight {
+    width: 100%;
+  }
+
+  .orderInfoRow {
+    flex-direction: column;
+    gap: .125rem;
+  }
+
+  .orderDetailBox {
+    padding: 1.25rem;
+  }
+
+}
+
+
+@media screen and (max-width: 480px) {
+  .orderDetailContainer {
+    padding: 1.25rem;
+  }
+}

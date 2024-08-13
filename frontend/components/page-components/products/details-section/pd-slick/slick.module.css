@@ -1,0 +1,23 @@
+.slick-thumb {
+  display: flex !important;
+  justify-content: space-between;
+}
+.slick-thumb li {
+  width: 160px;
+  margin: 0;
+}
+
+.slick-thumb li img {
+  width: 100%;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .slick-thumb li {
+   display: none;
+  }
+  .slider-img img{
+  width: 100%;
+  }
+
+}

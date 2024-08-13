@@ -1,0 +1,75 @@
+@import '@/styles/variables.scss';
+
+$box-shadow: #efede8;
+$border-color: #bbb29f;
+$border: #dae2ed;
+$color: #1c2025;
+
+.formItem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 0px;
+  }
+  justify-content: center;
+  align-items: flex-start;
+  align-self: stretch;
+
+  .myLabel {
+    width: 100%;
+    @include font-p;
+    width: 7.5rem;
+    height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .myDiv {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    .birthday {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+    .row {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .selectBtn {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+      }
+    }
+
+    .errorText {
+      @include font-small;
+      height: 25px;
+      padding-left: 1rem;
+      color: #a43131;
+    }
+  }
+  .button {
+    white-space: nowrap;
+    line-height: 44px;
+  }
+}

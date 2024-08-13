@@ -1,0 +1,42 @@
+.line img {
+  width: 100%;
+}
+.title {
+  font-family: 'Noto Serif JP';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.92px;
+}
+.container {
+  background-color: white;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  max-width: 1200px;
+}
+
+.bg-gray {
+  background-color: #f2f2f2;
+  border-radius: 20px;
+  padding: 20px 0;
+  height: 100%;
+}
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin:auto;
+
+}
+
+
+@media screen and (min-width: 800px) and (max-width: 1280px) {
+
+}
+
+@media screen and (max-width: 800px) {
+
+ 
+}
+

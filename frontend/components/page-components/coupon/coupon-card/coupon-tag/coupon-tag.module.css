@@ -1,0 +1,9 @@
+.tagBox {
+  display: inline;
+  margin-left: 8px;
+  padding: 1px 4px;
+  border: 1px solid #ff7575;
+  border-radius: 8px;
+  color: #ff7575;
+  font-size: 12px;
+}

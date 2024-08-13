@@ -1,0 +1,19 @@
+.formBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1.5rem;
+  row-gap: .75rem;
+}
+
+.span2 {
+  grid-column: span 2;
+  margin-bottom: 0.5rem;
+}
+
+
+@media screen and (max-width: 480px) {
+  .formBox {
+    display: flex;
+    flex-direction: column;
+  }
+}

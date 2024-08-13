@@ -1,0 +1,38 @@
+/* 會員資料 第二層選單 components styles */
+
+.userTabSec {
+  display: flex;
+  gap: 3rem;
+  margin: 0.5rem 0 1.5rem 0;
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+.userTabSec :hover {
+  color: #7c7c7c;
+}
+
+.userTabSec .active {
+  padding-bottom: .5rem;
+  border-bottom: 3px solid var(--pri-1);
+}
+
+.userTabSec .active :hover {
+  padding-bottom: .5rem;
+}
+
+@media screen and (max-width: 800px) {
+  .userTabSec {
+    font-size: .9375rem;
+    margin: 0 0 1.25rem 0;
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .userTabContainer {
+    display: flex;
+    justify-content: center;
+  }
+}

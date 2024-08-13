@@ -1,0 +1,33 @@
+.orderReviewHintBox {
+  display: flex;
+  gap: 2rem;
+}
+
+.orderReviewHintBox img {
+  width: 8rem;
+  align-self: flex-end;
+}
+
+.orderReviewDialog {
+  /* width: 70%; */
+  display: flex;
+  letter-spacing: 1px;
+  flex-direction: column;
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 1.5rem;
+  border-radius: 1rem;
+  border: 2px solid var(--pri-3);
+}
+
+
+
+@media screen and (max-width: 1120px) {
+  .orderReviewHintBox {
+    flex-direction: column;
+  }
+
+  .orderReviewHintBox img {
+    order: 1;
+  }
+
+}

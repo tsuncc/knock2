@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap');
+.home-section3 {
+  position: 'relative';
+  background: url('/bg-dark.png') no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  padding: 5.25rem 0;
+  text-align: center;
+  gap: 4rem;
+  overflow-x: hidden;
+}
+.home-section3 > .title {
+  width: 330px;
+  border-bottom: 1px solid #a3a3a3;
+  padding: 13px;
+  margin: 0 auto 4rem auto;
+}
+.home-section3 > .title h1 {
+  color: #a3a3a3;
+  font-family: 'Jolly Lodger', 'Noto Serif JP';
+}
+.home-section3 > .HomeBtn {
+  margin-top: 0.8rem;
+  padding: 0 7rem;
+}
+.home-section3 .slider > div > div {
+  overflow: unset;
+}

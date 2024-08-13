@@ -1,0 +1,56 @@
+.title {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.sectionContainer {
+  width: 100%;
+  height: auto;
+  padding-bottom: 4rem;
+}
+
+.wheelContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.couponContainer {
+  width: 90%;
+  margin: 0 auto;
+  padding: var(--popup-padding);
+  border-radius: var(--content-radius);
+  background-color: white;
+  box-shadow: var(--card-shadow);
+}
+
+
+.couponContainer h6 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.couponGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* .contentContainer {
+  display: flex;
+  width: 90%;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  padding: var(--content-padding);
+  border-radius: var(--content-radius);
+  background-color: white;
+  box-shadow: var(--card-shadow);
+} */
+
+
+
+
+
+@media screen and (max-width: 480px) {}

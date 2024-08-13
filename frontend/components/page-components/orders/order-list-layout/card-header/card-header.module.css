@@ -1,0 +1,27 @@
+.orderDetailHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.titleStyle {
+  font-weight: bold;
+}
+
+.btnStack {
+  display: flex;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+  .orderDetailHeader {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}

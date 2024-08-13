@@ -1,0 +1,12 @@
+.iconTextRow {
+  display: flex;
+  gap: 1rem;
+}
+
+.iconTextRow p {
+  font-size: 16px;
+}
+.label {
+  width: 5rem;
+  flex-shrink: 0;
+}

@@ -1,0 +1,16 @@
+.right {
+  justify-content: end;
+}
+.ghostContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  padding: 4rem;
+}
+
+.ghostImg {
+  width: 112px;
+}

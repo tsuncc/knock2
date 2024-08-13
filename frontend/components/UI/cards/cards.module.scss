@@ -1,0 +1,23 @@
+@import '@/styles/variables.scss';
+
+.card-01 {
+  margin: auto;
+  width: 315px;
+  @media screen and (min-width: 450px)  {
+    width: 375px;
+    height: 422px;
+  }
+  p {
+    @include font-small;
+  }
+  span {
+    @include font-small;
+    text-align: start;
+  }
+
+  .arrow {
+    position: absolute;
+    bottom: 3px;
+    right: -50px;
+  }
+}

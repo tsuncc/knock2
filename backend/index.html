@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>客服聊天室</title>
+    <link rel="stylesheet" href="/CSS/msg.css" />
+    <!-- <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <ul id="userCard"></ul>
+
+        <!-- 範例卡片 -->
+        <!-- <div class="card">
+          <div class="card-left">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">範例卡片</h3>
+            <p class="card-text">已讀訊息</p>
+            <button class="btn btn-primary">進入聊天</button>
+          </div>
+        </div> -->
+
+        <!-- --------- -->
+                 <!-- Notifications HTML start -->
+        <div id="notificationsModal" class="hidden">
+          <div class="overlay"></div>
+          <div class="modalBody">
+            <h3 onclick="quickInput()">發送全站通知</h3>
+            <textarea id="notificationsMessage" ></textarea>
+            <div class="buttons">
+              <span id="sendNotificationsResult" class="result"></span>
+              <div>
+                <button id="closeModalBtn" type="button" class="notificationsBtn">Close</button>
+                <button id="sendNotificationsBtn" type="button" class="notificationsBtn">Send</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card news">
+          <button id="openModalBtn" type="button" class="notificationsBtn"> Notifications </button>
+        </div>
+        <!-- Notifications HTML end -->
+
+      </div>
+
+      <div class="rightArea">
+        <h3>客服聊天室</h3>
+        <ul id="messages"></ul>
+        <div class="bottom">
+          <form id="form" action="">
+            <input id="input" autocomplete="off" /><button>Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+
+      const form = document.getElementById("form");
+      const input = document.getElementById("input");
+      const messages = document.getElementById("messages");
+      const userCard = document.getElementById("userCard");
+
+      // 加入房間
+      // const room = "room_14";
+      let room = "room_0";
+      const roomToJoin = "someRoomName";
+      var online = [];
+      var newOnline = [];
+      const username = "管理員";
+      let type = "text";
+
+      socket.on("connect", () => {
+        socket.emit("AllRoom");
+      });
+
+      socket.on("AllRoom", (data) => {
+        console.log("後台頁AllRoom", data);
+        userCard.textContent = "";
+
+        online = data;
+        if (online.length === 0) {
+          // console.log("AllRoom 為空");
+          const li = document.createElement("li");
+          // li.textContent = "目前沒有在線用戶";
+          li.innerHTML = `
+            <div class="card">
+            
+              <div class="nouser-body">
+                <h3 class="card-title">目前無在線用戶</h3>
+               
+              </div>
+            </div>
+          `;
+          userCard.appendChild(li);
+        } else {
+          online.forEach((itemData) => {
+            const li = document.createElement("li");
+
+            li.innerHTML = `
+            <div class="card">
+              <div class="card-left">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">${itemData.username || "用戶名稱"}</h3>
+                <p class="card-text">${itemData.room}</p>
+                <button onClick="joinRoom(event,'${
+                  itemData.room
+                }')" class="btn btn-primary">進入聊天</button>
+              </div>
+            </div>
+          `;
+            userCard.appendChild(li);
+            // console.log("----------append li");
+          });
+        }
+      });
+
+      socket.on("joinRoom", (data) => {
+        console.log("jjj HTML", data);
+        room = data.room;
+      });
+
+      function joinRoom(e, selectedRoom) {
+        // console.log("進入joinRoom fun---");
+        e.preventDefault();
+        socket.emit("joinRoom", { room: selectedRoom, username });
+        //  清空原本留言
+        messages.textContent = "";
+        window.scrollTo(0, document.body.scrollHeight);
+        // 請求更新 AllRoom 數據
+        socket.emit("AllRoom");
+      }
+
+      // 定期更新
+      setInterval(() => {
+        // console.log("更新---------------", online);
+        socket.emit("AllRoom");
+      }, 5000);
+
+      console.log("前台join", { room, username });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (input.value) {
+          socket.emit("chat message", {
+            room,
+            username,
+            type,
+            message: input.value,
+          });
+          input.value = "";
+        }
+      });
+
+      // 滾到底部*****
+      function setupScrollObserver() {
+        const container = document.querySelector("#messages");
+        if (container) {
+          container.scrollTop = container.scrollHeight;
+        }
+      }
+
+      socket.on("history", (history) => {
+        history.forEach((data) => {
+          const item = document.createElement("li");
+          if (data.type === "text") {
+            item.textContent = `${data.username} : ${data.message}`;
+          } else if (data.type === "img") {
+            item.innerHTML = `<div class="userArea"><div>${data.username} :</div><img class="userImg" src='/img/${data.message}' alt='img' /></div>`;
+          }else if(data.type ==='sticker'){
+            item.innerHTML = `<div class="userArea"><div>${data.username} :</div><img class="userSticker" src='/sticker/ghost_${data.message}.png' alt='img' /></div>`;
+          }
+          messages.appendChild(item);
+        });
+        // 滾到底部*****
+        setupScrollObserver();
+      });
+
+      socket.on("chat message", (data) => {
+        console.log("HTML", data);
+        const item = document.createElement("li");
+        if (data.type === "text") {
+            item.textContent = `${data.username} : ${data.message}`;
+          } else if (data.type === "img") {
+            item.innerHTML = `<div class="userArea"><div>${data.username} :</div><img class="userImg" src='/img/${data.message}' alt='img' /></div>`;
+          }else if(data.type ==='sticker'){
+            item.innerHTML = `<div class="userArea"><div>${data.username} :</div><img class="userSticker" src='/sticker/ghost_${data.message}.png' alt='img' /></div>`;
+          }
+        // item.textContent = `${data.username} : ${data.message}`;
+        messages.appendChild(item);
+        // 使用 setTimeout 來確保在 DOM 更新後滾動
+        setTimeout(() => {
+          setupScrollObserver();
+        }, 0);
+      });
+      // 處理斷開連接
+      socket.on("disconnect", (reason) => {
+        socket.off("chat message");
+        socket.off("history");
+        socket.off("joinRoom");
+        console.log("後台client:", reason);
+      });
+
+    /* Notifications script start */
+      const openModalBtn = document.querySelector("#openModalBtn");
+      const notificationsModal = document.querySelector("#notificationsModal");
+      const closeModalBtn = document.querySelector("#closeModalBtn");
+      const overlay = document.querySelector(".overlay");
+      const notificationsMessage = document.querySelector("#notificationsMessage");
+      const sendNotificationsBtn = document.querySelector("#sendNotificationsBtn");
+      const sendNotificationsResult = document.querySelector("#sendNotificationsResult");
+      
+      const quickInput = () =>{
+        notificationsMessage.value = '限時優惠，今日全館八折起！！！！'
+      }
+      const sentToAll = async () => {
+        const url = "http://localhost:3001/notifications/send-all";
+        const options = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ message: notificationsMessage.value }),
+        };
+        const result = await fetch(url, options)
+        const data = await result.json();
+          if (data.success) {
+            notificationsMessage.value = '';
+            sendNotificationsResult.innerText = "發送成功！";
+            setTimeout(() => {
+              sendNotificationsResult.innerText = "";
+            }, 3000);
+          }
+      };  
+
+      const modalOpen = () => {
+        notificationsModal.classList.remove("hidden");
+        notificationsMessage.value = '';
+      }
+
+      const modalClose = () => {
+        notificationsModal.classList.add("hidden");
+        notificationsMessage.value = '';
+      }
+
+      openModalBtn.addEventListener("click", () => modalOpen());
+      closeModalBtn.addEventListener("click", () => modalClose());
+      overlay.addEventListener("click", () => modalClose());
+      sendNotificationsBtn.addEventListener("click", () => sentToAll());
+    /* Notifications script end */
+    </script>
+  </body>
+</html>

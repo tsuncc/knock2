@@ -1,0 +1,245 @@
+.calendarBg {
+    width: 600px;
+    height: 860px;
+    background-color: var(--pri-1);
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border: 2px solid var(--sec-1);
+    border-radius: 20px;
+    color: var(--pri-3);
+    /* padding: 10px; */
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+  }
+  
+  .date {
+    color: var(--pri-3);
+  }
+  .selected {
+    background-color: var(--sec-1) !important;
+    color: #D9D9D9!important;
+  }
+  
+  .hr {
+    color: var(--sec-1);
+    border: 1px solid var(--sec-1);
+    opacity: 1;
+    margin-top: 20px;
+  }
+  
+  .h2 {
+    font-size: 2em;
+    line-height: 1.25em;
+    margin: 0.25em 0;
+  }
+  
+  .h3 {
+    font-size: 1.5em;
+    line-height: 1em;
+    margin: 0.33em 0;
+  }
+  
+  .table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  /* ---------- CALENDAR ---------- */
+  
+  .calendar {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .calendar header {
+    position: relative;
+  }
+  
+  .icon {
+    font-size: 30px;
+  }
+  
+  .calendar thead {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .calendar td {
+    border: 2px solid transparent;
+    border-radius: 50%; /* 圓形邊框 */
+    display: inline-block;
+    height: 3.5em; /* 方塊高度 */
+    line-height: 3.5em; /* 行高，垂直居中文字 */
+    text-align: center;
+    width: 3.5em; /* 方塊寬度 */
+    padding: 0; /* 移除內邊距 */
+    margin: 8px;
+    font-weight: bold;
+  }
+  
+  
+  .calendar .prevMonth {
+    color: #7c7c7c;
+  }
+  
+  .calendar .nextMonth {
+    color: #7c7c7c;
+  }
+  
+  .disabled {
+    color: #7c7c7c;
+  }
+  
+  .open {
+    position: relative;
+    color: var(--pri-1);
+    background-color: var(--pri-3); /* 背景颜色 */
+    border-radius: 50%;
+    width: 70%; 
+    height: 70%; 
+    display: inline-block;
+  }
+  
+  .partial {
+    background: #5dabad; /* 黃色表示剩部分場次 */
+    color: white;
+  }
+  
+  .notClickable {
+    pointer-events: none;
+    cursor: default;
+  }
+  
+  .full {
+    background: #963029; /* 紅色表示已額滿 */
+    color: white;
+  }
+  
+  .full.notClickable {
+    opacity: 0.8; /* 稍微降低不可點擊的滿額日期的不透明度，以視覺上區分 */
+  }
+  
+  .disabled {
+    color: #7c7c7c;
+  }
+  
+  .disabled.notClickable {
+    opacity: 0.5; /* 降低不可點擊的禁用日期的不透明度 */
+  }
+  
+  .prevMonth.notClickable,
+  .nextMonth.notClickable {
+    opacity: 0.3; /* 降低不可點擊的其他月份日期的不透明度 */
+  }
+  
+  .event {
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .event:after {
+    background: #00addf;
+    border-radius: 50%;
+    bottom: 0.5em;
+    display: block;
+    content: '';
+    height: 0.5em;
+    left: 50%;
+    margin: -0.25em 0 0 -0.25em;
+    position: absolute;
+    width: 0.5em;
+  }
+  
+  .event.currentDay:after {
+    background: #f9f9f9;
+  }
+  
+  .btn-prev,
+  .btn-next {
+    border: 2px solid #cbd1d2;
+    border-radius: 50%;
+    color: #cbd1d2;
+    height: 2em;
+    font-size: 0.75em;
+    line-height: 2em;
+    margin: -1em;
+    position: absolute;
+    top: 50%;
+    width: 2em;
+  }
+  
+  .btn-prev:hover,
+  .btn-next:hover {
+    background: #cbd1d2;
+    color: #f9f9f9;
+  }
+  
+  .btn-prev {
+    left: 3em;
+  }
+  
+  .btn-next {
+    right: 3em;
+  }
+  .icon2{
+    color: #A82929;
+    margin-right: 8px;
+    margin-left: 15px;
+  }
+  .icon3{
+    color: #76bccb;
+    margin-right: 8px;
+    margin-left: 15px;
+  }
+  .icon4{
+    color: var(--pri-3);
+    margin-right: 8px;
+    margin-left: 20px;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 18px;
+  }
+.icon5{
+    font-size: 54px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+@media screen and (max-width: 480px){
+  .calendarBg {
+    width: 100%; /* 或使用具體的像素值，例如 320px */
+    height: 670px;
+    margin: 40px auto;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 20px;
+  }
+
+  .calendar {
+    font-size: 14px; /* 縮小整體字體大小 */
+  }
+
+  .calendar td {
+    height: 3.2em;
+    line-height: 3.2em;
+    width: 3.2em;
+    margin: 3px;
+  }
+
+  .icon {
+    font-size: 24px;
+  }
+
+  .info {
+    font-size: 14px;
+  }
+
+  .icon5 {
+    font-size: 40px;
+    margin-left: 15px;
+  }
+}

@@ -1,0 +1,33 @@
+.menuItem {
+  /* flex: none; */
+  font-size: 1.125rem;
+
+  li {
+    width: 160px;
+    padding: .625rem 1.25rem;
+    margin-bottom: 0.5rem;
+    border-radius: 100px;
+    font-size: 1.125rem;
+    font-weight: bold;
+    letter-spacing: var(--letter-spacing-2);
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 100%;
+  }
+}
+
+.active {
+  background-color: var(--sec-1);
+
+  span {
+    color: white;
+  }
+
+  svg {
+    fill: white;
+  }
+}

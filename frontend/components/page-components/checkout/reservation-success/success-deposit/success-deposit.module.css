@@ -1,0 +1,13 @@
+.alignRight {
+  text-align: right;
+}
+
+.alignRight:first-child{
+  margin-top: 2rem;
+  margin-bottom: .75rem;
+}
+
+
+.alignRight:last-child{
+  opacity: 0.6;
+}

@@ -1,0 +1,69 @@
+
+.ring {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  transition: 0.5s;
+
+  @for $i from 1 through 3 {
+    $border-color: rgb(random(100) + 150, random(100) + 150, random(100) + 150);
+
+    .border#{$i} {
+      position: absolute;
+      inset: 0;
+      border: 2px solid $border-color;
+      transition: 0.5s;
+      transform: scale(0.7);
+      border-radius: unquote(
+        "#{random(30)+20}% #{random(30)+20}% #{random(30)+20}% #{random(30)+20}%  / #{random(30)+20}% #{random(30)+20}% #{random(30)+20}% #{random(30)+20}%"
+      );
+      animation: if($i == 2, animate, animate2)
+        #{random(3) +
+        3}s
+        linear
+        infinite;
+    }
+
+    &:hover .border#{$i} {
+      border: 6px solid $border-color;
+      filter: drop-shadow(0 0 20px $border-color);
+    }
+  }
+  @keyframes animate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes animate2 {
+    0% {
+      transform: rotate(360deg);
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  .ghost {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    > img {
+      object-fit: contain;
+    }
+  }
+  &:hover {
+    filter: drop-shadow(0 0 20px rgb(255, 255, 255));
+  }
+}

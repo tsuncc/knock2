@@ -1,0 +1,46 @@
+.map{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+  align-items: center;
+}
+.title{
+  margin-bottom: 196px;
+  font-size: 48px;
+  font-weight: bold;
+  color: #D9D9D9;
+}
+.info{
+  margin-bottom: 18px;
+  color: #D9D9D9;
+}
+.info2{
+  color: #D9D9D9;
+}
+.iframe {
+  width: 100%; /* 保證 iframe 寬度自適應容器 */
+  height: 380px; /* 默認高度 */
+  border: 0;
+  border-radius: 10px;
+}
+  @media (max-width: 480px) {
+    .map{
+      display: block;
+      justify-content: center;
+      margin-bottom: 80px;
+      align-items: center;
+    }
+    .title{
+      margin-bottom: 30px;
+      font-size: 26px;
+    }
+    .info{
+      font-size: 14px;
+    }
+    .info2{
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+    .iframe {
+      height: 250px; /* 手機尺寸下的高度 */
+  }}

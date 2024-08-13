@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap');
+.buy-btn,
+a {
+  text-decoration: none;
+  color: #333;
+}
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  font-family: 'Noto Serif JP','Noto Sans TC';
+  font-style: normal;
+  background-image: url('/pics/background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

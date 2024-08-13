@@ -1,0 +1,35 @@
+.sectionContainer {
+  width: 100%;
+  padding: 2.75rem 0;
+}
+
+.sectionBody {
+  display: flex;
+  gap: 3rem;
+  width: 95%;
+  max-width: 1280px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.sectionRight {
+  flex-shrink: 1;
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 800px) {
+  .sectionContainer {
+    padding: 1rem;
+  }
+
+  .sectionBody {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sectionBody {
+    width: 100%;
+  }
+}

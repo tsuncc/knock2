@@ -1,0 +1,82 @@
+.modalBox {
+  --scale-factor: 1;
+  overflow: hidden !important;
+}
+
+@media (max-width: 840px) {
+  .modalBox {
+    --scale-factor: 0.8;
+  }
+}
+
+@media (max-width: 600px) {
+  .modalBox {
+    --scale-factor: 0.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalBox {
+    --scale-factor: 0.5;
+    width: 90vw !important;
+    height: 90vh !important;
+  }
+}
+
+.modalBox {
+  width: calc(var(--modal-width) * var(--scale-factor)) !important;
+  height: calc(var(--modal-height) * var(--scale-factor)) !important;
+  padding: calc(2.5rem * var(--scale-factor)) !important;
+}
+
+.modalHeader {
+  font-size: calc(1.5rem * var(--scale-factor));
+  margin-bottom: calc(1rem * var(--scale-factor));
+}
+
+.modalContent {
+  font-size: calc(1rem * var(--scale-factor));
+  line-height: calc(40px * var(--scale-factor));
+  flex: 1;
+  overflow-y: auto;
+  padding-right: calc(0.5rem * var(--scale-factor));
+}
+
+.modalBox hr {
+  margin: calc(1rem * var(--scale-factor)) 0;
+}
+
+.modalFooter {
+  letter-spacing: 1.4px;
+  font-size: calc(1rem * var(--scale-factor));
+  margin-top: calc(1rem * var(--scale-factor));
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: calc(1rem * var(--scale-factor));
+}
+
+.modalBox button {
+  font-size: calc(16px * var(--scale-factor));
+  padding: calc(10px * var(--scale-factor)) calc(30px * var(--scale-factor));
+}
+
+/* 自定義滾動條樣式 */
+.modalContent::-webkit-scrollbar {
+  width: calc(8px * var(--scale-factor));
+}
+
+.modalContent::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.modalContent::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: calc(4px * var(--scale-factor));
+}
+
+.modalContent::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

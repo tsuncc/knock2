@@ -1,0 +1,21 @@
+.noDataBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+
+.imgTextBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imgTextBox img {
+  width: 65%;
+  max-width: 5rem;
+  min-width: 5rem;
+  margin-bottom: 1rem;
+}

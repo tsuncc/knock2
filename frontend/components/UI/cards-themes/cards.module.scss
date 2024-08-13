@@ -1,0 +1,66 @@
+// variables.scss
+$mediumDuration: 0.3s;
+
+@mixin hacks() {
+  // 定義具體樣式
+}
+
+@mixin prefixed($property, $value) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -ms-#{$property}: $value;
+  #{$property}: $value;
+}
+@import '@/styles/variables.scss';
+
+.card-02 {
+  margin: auto;
+  margin-bottom: 76px;
+  width: 315px;
+
+  .bookingButton {
+    border: 1px solid #222222;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-weight: normal;
+    transition: background-color 0.3s, color 0.3s;}
+
+  /* Grow effect */
+  @mixin grow {
+    @include hacks();
+    @include prefixed(transition-duration, $mediumDuration);
+    @include prefixed(transition-property, transform);
+
+    &:hover,
+    &:focus,
+    &:active {
+      @include prefixed(transform, scale(1.03));
+    }
+  }
+
+  @include grow;
+
+  @media screen and (min-width: 450px) {
+    width: 375px;
+    height: 422px;
+  }
+
+  p {
+    @include font-small;
+  }
+
+  span {
+    @include font-small;
+    text-align: start;
+  }
+
+  .arrow {
+    position: absolute;
+    bottom: 3px;
+    right: -50px;
+  }
+  .bookingButton {
+  width: 100%;
+  text-align: center;
+  }
+}

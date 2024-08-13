@@ -1,0 +1,206 @@
+@import '@/styles/variables.scss';
+
+.banner {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - #{$nav-height});
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+  z-index: 1;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      0.25turn,
+      rgb(0, 0, 0, 1) 0%,
+      rgb(0, 0, 0, 0.5) 40%,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.5) 60%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    z-index: 2;
+  }
+
+  .banner-key {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+    opacity: 1;
+    z-index: 2;
+    // mask-image: url('/home/key.svg'),
+    //   linear-gradient(
+    //     rgb(0, 0, 0, 0) 0%,
+    //     rgb(0, 0, 0, 0) 10%,
+    //     rgba(0, 0, 0, 0.5) 50%,
+    //     rgba(0, 0, 0, 0) 90%,
+    //     rgba(0, 0, 0, 0) 100%
+    //   );
+
+    // mask-size: 10%, cover;
+    // mask-position: center, center;
+    // mask-repeat: no-repeat, no-repeat;
+    // mask-composite: add;
+
+    // transition: mask 1s;
+    // animation: key 3s 1s ease-in forwards;
+    // &:hover{
+    //   mask-size: 100%;
+    // }
+    // @keyframes key {
+    //   0% {
+    //     mask-size: 10%, cover;
+    //   }
+    //   80% {
+    //     mask-size: 200%, cover;
+    //   }
+    //   100% {
+    //     mask-size: 200%, cover;
+    //   }
+    // }
+  }
+
+  $text-mobile-width: 80vw;
+  $text-screen-width: 30vw;
+
+  .banner-text {
+    @media screen and (min-width: 768px) {
+      width: $text-screen-width;
+    }
+    position: absolute;
+    width: $text-mobile-width;
+    z-index: 4;
+    opacity: 0;
+    &.text-show {
+      opacity: 1;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      border-radius: 50px 50px 50px 50px;
+      background: rgba(0, 0, 0, 0.2);
+      filter: blur(10px);
+    }
+    > img {
+      object-fit: contain;
+    }
+    &:nth-child(2) {
+      transition: all 1s;
+      top: 5%;
+      left: 5%;
+      height: calc($text-mobile-width * (831 / 1877));
+      @media screen and (min-width: 768px) {
+        height: calc($text-screen-width * (831 / 1877));
+      }
+      > img {
+        animation: key-text 5s linear infinite alternate;
+      }
+    }
+    &:nth-child(3) {
+      transition: all 1s 0.2s;
+      top: 50%;
+      right: 5%;
+      transform: translateY(-50%);
+      height: calc($text-mobile-width * (416 / 1935));
+      @media screen and (min-width: 768px) {
+        height: calc($text-screen-width * (416 / 1935));
+      }
+      > img {
+        animation: key-text 6s linear infinite alternate-reverse;
+      }
+    }
+  }
+  .title {
+    @include font-p;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    z-index: 5;
+    color: $text-white;
+    transition: all 1s 0.4s;
+    &.title-show {
+      top: 30%;
+      opacity: 1;
+      filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 1));
+    }
+  }
+  .banner-btn {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    opacity: 0;
+    z-index: 5;
+    transition: all 1s 0.6s;
+    &.btn-show {
+      opacity: 1;
+    }
+  }
+}
+
+// @keyframes key-text-show {
+//   from {
+//     opacity: 0;
+//   }
+//   to {
+//     opacity: 1;
+//   }
+// }
+
+@keyframes key-text {
+  0% {
+    filter: unset;
+  }
+  2% {
+    filter: blur(3px);
+  }
+  4% {
+    filter: unset;
+  }
+  40% {
+    filter: unset;
+  }
+  42% {
+    filter: blur(3px);
+  }
+  44% {
+    filter: unset;
+  }
+  46% {
+    filter: blur(3px);
+  }
+  48% {
+    filter: unset;
+  }
+  50% {
+    filter: blur(3px);
+  }
+  52% {
+    filter: unset;
+  }
+}
+
+// @keyframes title-show {
+//   from {
+//     top: 0%;
+//     opacity: 0;
+//   }
+//   to {
+//     top: 30%;
+//     opacity: 1;
+//     filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 1));
+//   }
+// }

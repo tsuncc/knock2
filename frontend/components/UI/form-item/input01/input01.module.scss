@@ -1,0 +1,118 @@
+@import '@/styles/variables.scss';
+
+// default
+$color: #1c2025;
+
+// focus
+$box-shadow: #efede8;
+// hover focus
+$border-color: #bbb29f;
+
+// disabled
+$disabled-field-line: #eaeaea;
+
+.inputDefault {
+  @include font-small;
+  position: relative;
+  width: 100%;
+  height: 44px;
+  padding: 0.5rem 1rem;
+  color: $color;
+  background: #fff;
+  border-radius: 8px;
+  border: 2px solid $pri-3;
+  transition: all 200ms;
+
+  &:hover {
+    border-color: $border-color;
+  }
+
+  &:focus {
+    border-color: $border-color;
+    box-shadow: 0 0 0 3px $box-shadow;
+  }
+
+  // firefox
+  &:focus-visible {
+    outline: 0;
+  }
+}
+
+.inputDefaultLine {
+  @include font-small;
+  width: 100%;
+  height: 32px;
+  padding: 0.5rem 1rem;
+  color: $color;
+  background: #fff;
+  border: none;
+  border-bottom: 2px solid $pri-3;
+  transition: all 200ms;
+
+  &:hover {
+    border-color: $border-color;
+  }
+
+  &:focus {
+    border-color: $sec-1;
+  }
+
+  // firefox
+  &:focus-visible {
+    outline: 0;
+  }
+}
+
+.inputDisabled {
+  @include font-small;
+  width: 100%;
+  height: 44px;
+  padding: 0.5rem 1rem;
+  color: $color;
+  background: #fff;
+  border-radius: 8px;
+  border: unset;
+}
+
+.inputDisabledLine {
+  @include font-small;
+  width: 100%;
+  height: 32px;
+  padding: 0.5rem 1rem;
+  color: $color;
+  background: #fff;
+  border: none;
+  border-bottom: 2px solid $disabled-field-line;
+  transition: all 200ms;
+
+  &:hover {
+    border-color: $disabled-field-line;
+  }
+
+  &:focus {
+    border-color: $disabled-field-line;
+  }
+
+  // firefox
+  &:focus-visible {
+    outline: 0;
+  }
+}
+
+.input {
+  position: relative;
+  width: 100%;
+  .eyeIcon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: $text-grey;
+  }
+}

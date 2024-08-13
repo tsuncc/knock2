@@ -1,0 +1,43 @@
+.orderBox {
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: var(--content-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.orderBody {
+  display: flex;
+  flex-direction: row;
+}
+
+.orderInfoRowBox {
+  width: 40%;
+  margin-bottom: 1.25rem;
+}
+
+.imgListBox {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 1080px) {
+  .orderBody {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .orderInfoRowBox {
+    width: 100%;
+  }
+
+  .imgListBox {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}

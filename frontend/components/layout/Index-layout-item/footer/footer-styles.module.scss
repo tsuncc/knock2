@@ -1,0 +1,129 @@
+@import '@/styles/variables.scss';
+$footer-bg: #181615;
+
+.my-footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  // background-color: #fff;
+  overflow: hidden;
+
+  > div > img {
+    object-fit: cover;
+    object-position: center;
+    &:last-child {
+      transform: scaleX(-1);
+    }
+  }
+
+  p {
+    @include font-p-bold;
+    color: $text-white;
+  }
+
+  span {
+    @include font-small;
+    color: $text-white;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $text-white;
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    &:last-child {
+      background-color: $footer-bg;
+      padding: 80px 16px;
+    }
+
+    > ul {
+      display: flex;
+      flex-direction: column;
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+      }
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 22px;
+      width: 100%;
+      max-width: 1208px;
+      gap: 20px;
+
+      > li {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+
+        > div {
+          background-color: $pri-3;
+          align-self: stretch;
+          width: 1px;
+          height: 138px;
+          margin: auto 0;
+        }
+
+        > img {
+          margin: 5px auto;
+          &:first-child {
+            opacity: 0.8;
+          }
+        }
+      }
+
+      > li:first-child {
+        width: 330px;
+        > ul {
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+
+          > li {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+          }
+        }
+      }
+
+      > li:last-child {
+        width: 330px;
+        gap: 32px;
+
+        > ul {
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+          &:first-child {
+            @media screen and (max-width: 768px) {
+              display: none;
+            }
+          }
+
+          > li {
+            display: flex;
+            align-items: center;
+            @include font-h5;
+            gap: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  svg {
+    fill: $text-white;
+  }
+
+  .mobile-hide {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+}

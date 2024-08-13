@@ -1,0 +1,11 @@
+.couponModalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.couponTable {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}

@@ -1,0 +1,79 @@
+.tag {
+  position: absolute;
+  top: 0px;
+  border-radius: 0.3rem 0 0 0;
+  display: flex;
+  width: 100px;
+  height: 38px;
+  padding: 4px 8px;
+  justify-content: center;
+  align-items: center;
+  background: #b99755;
+
+  color: #fff;
+  text-align: center;
+  font-family: 'Noto Serif JP';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.32px;
+}
+.card-btn {
+  border: 2px solid black;
+  width: 270px;
+}
+.buy-btn {
+  font-family: Noto Serif JP;
+  font-weight: bold;
+}
+
+.buy-btn-outer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buy-btn-outer:first-child {
+  border-right: 2px solid black;
+}
+.card {
+  margin: 2.2rem;
+  width: 20rem;
+}
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.30) 0 5px 25px;
+}
+.grid {
+  justify-content: center;
+  grid-template-columns: auto auto auto;
+  max-width: 1200px;
+  padding: 0;
+  margin: auto;
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+  .grid {
+    grid-template-columns: auto auto;
+  }
+  .buy-btn {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .grid {
+    grid-template-columns: auto;
+  }
+  .card {
+    width: 22rem;
+  }
+  .card-btn {
+    border: 2px solid black;
+    width: 100%;
+    font-size: 24px;
+  }
+  .buy-btn-outer button {
+    font-size: 24px;
+  }
+}

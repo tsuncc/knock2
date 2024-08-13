@@ -1,0 +1,212 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+}
+h5,
+p {
+  margin: 0;
+}
+h3 {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0.625rem;
+}
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+}
+.sidebar {
+  width: 13rem;
+  height: 100%;
+}
+
+.card-left {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-body {
+  margin: 0;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.nouser-body {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #333;
+}
+.card-left .fa-user {
+  font-size: 40px;
+}
+.card-text {
+  font-size: 14px;
+}
+.card-title {
+  padding: 0;
+}
+
+.rightArea {
+  width: 100%;
+  border: #333 solid 1px;
+  position: relative;
+  /* max-height: calc(100vh - 83px); */
+
+  display: flex;
+  flex-direction: column;
+}
+.rightArea h3 {
+  display: flex;
+  align-items: center;
+}
+
+#messages {
+  list-style-type: none;
+  position: relative;
+  height: 100%;
+  min-height: calc(100vh - 120px);
+  max-height: calc(100vh - 120px);
+  padding: 0 12px;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+#messages > li {
+  padding: 0.5rem 1rem;
+}
+#messages > li:nth-child(odd) {
+  background: #efefef;
+}
+
+.bottom {
+  display: flex;
+  box-sizing: border-box;
+  align-items: flex-end;
+  width: 100%;
+  height: auto;
+  padding: 12px;
+  border-top: 1px solid #eef1f6;
+}
+#form {
+  /* background: rgba(0, 0, 0, 0.15);
+  padding: 0.25rem; */
+  width: 100%;
+  /* backdrop-filter: blur(10px);
+*/
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+}
+#input {
+  width: 100%;
+  height: 1.875rem;
+  font-size: large;
+}
+
+#input:focus,
+textarea:focus {
+  outline: none;
+}
+#form > button,
+.notificationsBtn {
+  background: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  border-radius: 3px;
+  outline: none;
+  color: #fff;
+}
+.userImg {
+  max-width: 200px;
+  height: auto;
+  padding-left: 8px;
+}
+.userSticker {
+  max-width: 100px;
+  height: auto;
+  padding-left: 8px;
+}
+.userArea {
+  display: flex;
+}
+.btn.btn-primary {
+  background-color: #676767;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  padding: 4px 10px;
+  margin-top: 2px;
+}
+
+/* Notifications start */
+.modalBody {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+
+  width: 500px;
+  padding: 40px;
+
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modalBody > textarea {
+  font-size: 20px;
+  width: 100%;
+  height: 180px;
+  /* height: 200px; */
+}
+.modalBody > .buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.modalBody .result {
+  font-size: 20px;
+  color: green;
+}
+
+.hidden {
+  display: none;
+}
+/* Notifications end */
+.news{
+  justify-content: center;
+}

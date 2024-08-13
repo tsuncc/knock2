@@ -1,0 +1,14 @@
+.iconTextRow {
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+}
+
+.iconTextRow svg {
+  width: .75rem;
+  fill: var(--sec-1);
+}
+
+.contentText {
+  font-size: .9375rem;
+}
